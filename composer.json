@@ -1,0 +1,32 @@
+{
+    "name": "dem13n/topic-starter-label",
+    "description": "Adds a label to the discussion author",
+    "type": "flarum-extension",
+    "keywords": ["discussion"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dem13n",
+            "email": "idem13n@gmail.com"
+        }
+    ],
+    "require": {
+        "flarum/core": "^0.1.0-beta.15"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dem13n\\Topic\\Starter\\Label\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Topic Starter Label",
+            "category": "discussion",
+            "icon": {
+                "name": "fas fa-crown",
+                "backgroundColor": "#2B6205",
+                "color": "#fff"
+            }
+        }
+    }
+}
