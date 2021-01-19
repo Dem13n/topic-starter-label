@@ -17,8 +17,9 @@ app.initializers.add('dem13n-topic-starter-label', () => {
 
     const routeName = app.current.get('routeName');
 
-    if (routeName === 'discussion' || routeName === 'discussion.near') {
+    if (routeName === 'discussion' || routeName === 'discussion.near' || routeName === 'blogArticle') {
 
+      const labelText = (routeName === 'blogArticle') ? app.translator.trans('dem13n.forum.blog_article_author') : app.translator.trans('dem13n.forum.topic_starter');
       const post = this.attrs.post;
       const postAuthor = post.user().id();
       const discussionAuthor = post.discussion().user().id();
@@ -29,7 +30,7 @@ app.initializers.add('dem13n-topic-starter-label', () => {
 
       if (postAuthor === discussionAuthor && checkFP(post)) {
         vnode.children.push(
-          <span className="topicStarter">{app.translator.trans('dem13n.forum.topic_starter')}</span>
+          <span className="topicStarter">{labelText}</span>
         );
       }
     }
