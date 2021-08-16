@@ -25,6 +25,9 @@ app.initializers.add('dem13n-topic-starter-label', () => {
 	  if (!post.user().id) return;
 
       const postAuthor = post.user().id();
+
+	  if (!post.discussion().user().id) return;
+
       const discussionAuthor = post.discussion().user().id();
 
       if (!discussionAuthor && !postAuthor) {
