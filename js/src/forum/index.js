@@ -21,6 +21,9 @@ app.initializers.add('dem13n-topic-starter-label', () => {
 
       const labelText = (routeName === 'blogArticle') ? app.translator.trans('dem13n.forum.blog_article_author') : app.translator.trans('dem13n.forum.topic_starter');
       const post = this.attrs.post;
+
+	  if (!post.user().id) return;
+
       const postAuthor = post.user().id();
       const discussionAuthor = post.discussion().user().id();
 
